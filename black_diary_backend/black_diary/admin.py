@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Entrie
+from .models import NewPage
 
 
-@admin.register(Entrie)
-class EntrieAdmin(admin.ModelAdmin):
+@admin.register(NewPage)
+class DiaryAdmin(admin.ModelAdmin):
     list_display = [
         "title",
         "text",

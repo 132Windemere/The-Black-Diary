@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Entrie(models.Model):
+class NewPage(models.Model):
     title = models.CharField(max_length=250, blank=False)
     text = models.TextField()
     image = models.ImageField(upload_to="images/")

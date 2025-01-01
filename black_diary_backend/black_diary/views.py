@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 from rest_framework import generics
 from .serializers import EntrieSerializer
-from .models import Entrie
+from .models import NewPage
 from django.db.models import Q
 from datetime import datetime
 
@@ -10,7 +10,7 @@ class EntrieLlistCreateView(generics.ListCreateAPIView):
     serializer_class = EntrieSerializer
 
     def get_queryset(self):
-        queryset = Entrie.objects.all().order_by("-timestamp")
+        queryset = NewPage.objects.all().order_by("-timestamp")
         search_query = self.request.query_params.get("search", None)
         start_date = self.request.query_params.get("start_date", None)
         end_date = self.request.query_params.get("end_date", None)
@@ -59,10 +59,10 @@ class EntrieLlistCreateView(generics.ListCreateAPIView):
 
 
 class EntrieDetailView(generics.RetrieveAPIView):
-    queryset = Entrie.objects.all()
+    queryset = NewPage.objects.all()
     serializer_class = EntrieSerializer
 
 
 class EntryDeleteView(generics.DestroyAPIView):
-    queryset = Entrie.objects.all()
+    queryset = NewPage.objects.all()
     serializer_class = EntrieSerializer

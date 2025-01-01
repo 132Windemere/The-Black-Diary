@@ -1,10 +1,10 @@
 import rest_framework
-from .models import Entrie
+from .models import NewPage
 
 
 class EntrieSerializer(rest_framework.serializers.ModelSerializer):
     class Meta:
-        model = Entrie
+        model = NewPage
         fileds = [
             "id",
             "title",
